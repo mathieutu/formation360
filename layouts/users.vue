@@ -16,12 +16,7 @@
 import { mapActions } from 'vuex'
 export default {
   fetch() {
-    return Promise.all([
-      new Promise((resolve) => {
-        setTimeout(resolve, 3000)
-      }),
-      this.fetchUsers(),
-    ])
+    return this.fetchUsers()
   },
   methods: {
     ...mapActions('users', ['fetchUsers']),
